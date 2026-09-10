@@ -46,17 +46,39 @@ const translations = {
         },
 
         project1: {
-            title: "سیستم رزرو بلیط هواپیما",
-            description:"طراحی و توسعه یک وب‌سایت برای رزرو بلیط هواپیما با تمرکز بر رابط کاربری، منطق رزرو، مدیریت اطلاعات و ارتباط با پایگاه داده.",
-                
+            title: "وب‌سایت آرشیو مدل‌های سه‌بعدی",
+            description:"طراحی و توسعه یک وب‌سایت اختصاصی برای آرشیو، نمایش و مدیریت مجموعه مدل‌ها و Assetهای سه‌بعدی با رابط کاربری مدرن و Responsive.",
+            btn: "مشاهده ریپازیتوری",
         },
         project2: {
-            title: "وب‌سایت کلینیک زیبایی",
-            description: "طراحی، توسعه و راه‌اندازی وب‌سایت یک کلینیک زیبایی با رابط کاربری Responsive و آماده‌سازی پروژه برای استفاده روی سرور."
+            title: "وب‌سایت جاویدنامان ایران",
+            description: " طراحی و توسعه یک وب‌سایت معرفی و آرشیو با رابط کاربری مدرن، ساختار Responsive و تمرکز بر ارائه و نمایش محتوای پروژه.",
+            btn: "مشاهده ریپازیتوری",
         },
         project3: {
+            title: "سیستم رزرو بلیط هواپیما",
+            description:"طراحی و توسعه یک وب‌سایت برای رزرو بلیط هواپیما با تمرکز بر رابط کاربری، منطق رزرو، مدیریت اطلاعات و ارتباط با پایگاه داده.",
+            btn: "مشاهده ریپازیتوری",
+        },
+        project4: {
+            title: "وب‌سایت کلینیک زیبایی",
+            description: "طراحی، توسعه و راه‌اندازی وب‌سایت یک کلینیک زیبایی با رابط کاربری Responsive و آماده‌سازی پروژه برای استفاده روی سرور.",
+            btn: "مشاهده وب سایت",
+        },
+        project5: {
             title: "سیستم رزرو غذا",
-            description: "طراحی و پیاده‌سازی یک سیستم رزرو غذا با زبان C++ با تمرکز بر منطق برنامه و مدیریت فرآیندهای مربوط به سفارش و رزرو."
+            description: "طراحی و پیاده‌سازی یک سیستم رزرو غذا با زبان C++ با تمرکز بر منطق برنامه و مدیریت فرآیندهای مربوط به سفارش و رزرو.",
+            btn: "مشاهده ریپازیتوری",
+        },
+        project6: {
+            title: "وب‌سایت شخصی ماهان پناهی",
+            description: "طراحی و توسعه وب‌سایت شخصی برای معرفی مهارت‌ها، پروژه‌ها، سوابق و فعالیت‌های حرفه‌ای با رابط کاربری مدرن و Responsive.",
+
+        },
+        project7: {
+            title: "ربات تلگرامی امانتدار",
+            description: "طراحی و توسعه یک ربات تلگرامی برای مدیریت یادآوری‌ها، مناسبت‌ها و کارهای روزمره با قابلیت دسته‌بندی، تکرار زمان‌بندی‌شده، مدیریت یادآوری‌ها و ارسال اعلان خودکار.",
+            btn: "مشاهده پروژه",
         },
 
         education: {
@@ -154,18 +176,38 @@ const translations = {
         },
 
         project1: {
-            title: "Airline Ticket Booking System",
-            description: "Designed and developed a website for airline ticket booking, focusing on user interface, booking logic, information management, and database integration."
+            title: "3D Models Archive Website",
+            description: "Designed and developed a dedicated website for archiving, showcasing, and managing a collection of 3D models and assets with a modern, responsive user interface.",
+            btn: "View Repository",
         },
-
         project2: {
-            title: "Beauty Clinic Website",
-            description: "Designed, developed, and deployed a beauty clinic website with a responsive user interface and prepared the project for server deployment."
+            title: "JavidNamha Iran Website",
+            description: "Designed and developed a modern, responsive website for introducing and archiving project content, with a focus on presenting and showcasing digital materials.",
+            btn: "View Repository",
         },
-
         project3: {
+            title: "Airline Ticket Reservation System",
+            description: "Designed and developed an airline ticket reservation website with a focus on user interface, reservation logic, data management, and database integration.",
+            btn: "View Repository",
+        },
+        project4: {
+            title: "Beauty Clinic Website",
+            description: "Designed, developed, and deployed a responsive website for a beauty clinic, with a modern user interface and server-ready project setup.",
+            btn: "View Website",
+        },
+        project5: {
             title: "Food Reservation System",
-            description: "Designed and implemented a food reservation system using C++, focusing on application logic and managing the processes related to ordering and reservations."
+            description: "Designed and implemented a food reservation system using C++, with a focus on application logic and managing the processes involved in ordering and reservations.",
+            btn: "View Repository",
+        },
+        project6: {
+            title: "Mahan Panahi Personal Website",
+            description: "Designed and developed a personal website to showcase skills, projects, experience, and professional activities through a modern, responsive user interface.",
+        },
+        project7: {
+            title: "Amanatdar Telegram Bot",
+            description: "Designed and developed a Telegram bot for managing reminders, events, and daily tasks, featuring categorization, scheduled repetition, reminder management, and automated notifications.",
+            btn: "View Project",
         },
 
         education: {
@@ -262,18 +304,38 @@ const translations = {
         },
 
         project1: {
-            title: "نظام حجز تذاكر الطيران",
-            description: "تصميم وتطوير موقع إلكتروني لحجز تذاكر الطيران، مع التركيز على واجهة المستخدم ومنطق الحجز وإدارة المعلومات والتكامل مع قاعدة البيانات."
+            title: "موقع أرشيف النماذج ثلاثية الأبعاد",
+            description: "تصميم وتطوير موقع إلكتروني مخصص لأرشفة وعرض وإدارة مجموعة من النماذج والأصول ثلاثية الأبعاد، مع واجهة مستخدم عصرية ومتجاوبة.",
+            btn: "عرض المستودع",
         },
-
         project2: {
-            title: "موقع عيادة تجميل",
-            description: "تصميم وتطوير وإطلاق موقع إلكتروني لعيادة تجميل بواجهة مستخدم متجاوبة (Responsive)، مع تجهيز المشروع للعمل على الخادم."
+            title: "موقع جاويدناما إيران",
+            description: "تصميم وتطوير موقع إلكتروني عصري ومتجاوب للتعريف بمحتوى المشاريع وأرشفته، مع التركيز على تقديم وعرض المحتوى الرقمي.",
+            btn: "عرض المستودع",
         },
-
         project3: {
+            title: "نظام حجز تذاكر الطيران",
+            description: "تصميم وتطوير موقع إلكتروني لحجز تذاكر الطيران، مع التركيز على واجهة المستخدم، ومنطق الحجز، وإدارة البيانات، والتكامل مع قاعدة البيانات.",
+            btn: "عرض المستودع",
+        },
+        project4: {
+            title: "موقع عيادة تجميل",
+            description: "تصميم وتطوير وإطلاق موقع إلكتروني متجاوب لعيادة تجميل، مع واجهة مستخدم عصرية وتجهيز المشروع للعمل على الخادم.",
+            btn: "عرض الموقع",
+        },
+        project5: {
             title: "نظام حجز الطعام",
-            description: "تصميم وتنفيذ نظام لحجز الطعام باستخدام لغة C++، مع التركيز على منطق البرنامج وإدارة العمليات المتعلقة بالطلبات والحجوزات."
+            description: "تصميم وتنفيذ نظام لحجز الطعام باستخدام لغة ++C، مع التركيز على منطق التطبيق وإدارة العمليات المتعلقة بالطلبات والحجوزات.",
+            btn: "عرض المستودع",
+        },
+        project6: {
+            title: "الموقع الشخصي لماهان بناهي",
+            description: "تصميم وتطوير موقع شخصي لعرض المهارات والمشاريع والخبرات والأنشطة المهنية من خلال واجهة مستخدم عصرية ومتجاوبة.",
+        },
+        project7: {
+            title: "روبوت أمانتدار على تيليجرام",
+            description: "تصميم وتطوير روبوت على تيليجرام لإدارة التذكيرات والمناسبات والمهام اليومية، مع إمكانية التصنيف والتكرار المجدول وإدارة التذكيرات وإرسال الإشعارات تلقائيًا.",
+            btn: "عرض المشروع",
         },
 
         education: {
