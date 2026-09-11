@@ -442,6 +442,235 @@ if (
 
 }
 
+/* =========================================================
+   CERTIFICATE MODAL
+========================================================= */
+
+const certificateModal =
+    document.getElementById('certificateModal');
+
+const certificateModalImage =
+    document.getElementById('certificateModalImage');
+
+const certificateModalTitle =
+    document.getElementById('certificateModalTitle');
+
+const certificateModalEnglishTitle =
+    document.getElementById(
+        'certificateModalEnglishTitle'
+    );
+
+const certificateModalNumber =
+    document.getElementById(
+        'certificateModalNumber'
+    );
+
+const modalClose =
+    document.querySelector('.modal-close');
+
+const modalBackdrop =
+    document.querySelector('.modal-backdrop');
+
+const closeModalButton =
+    document.querySelector('.close-modal-btn');
+
+const certificateButtons =
+    document.querySelectorAll(
+        '.view-certificate'
+    );
+
+
+/* =========================
+   OPEN MODAL
+========================= */
+
+certificateButtons.forEach(button => {
+
+    button.addEventListener(
+        'click',
+        () => {
+
+            const card =
+                button.closest(
+                    '.certificate-card'
+                );
+
+            if (!card) {
+                return;
+            }
+
+
+            /* Certificate image */
+
+            const cardImage = card.querySelector('.certificate-image img');
+            if (cardImage) {
+                certificateModalImage.src = cardImage.getAttribute('src');
+                certificateModalImage.alt = cardImage.getAttribute('alt') || 'Certificate';
+            }
+
+
+            /* Persian title */
+            const persianTitle =
+                card
+                    .querySelector('h4')
+                    ?.textContent
+                    .trim();
+
+            if (persianTitle) {
+
+                certificateModalTitle.textContent =
+                    persianTitle;
+
+            }
+
+
+            /* English title */
+
+            const englishTitle =
+                card
+                    .querySelector('p')
+                    ?.textContent
+                    .trim();
+
+            if (englishTitle) {
+
+                certificateModalEnglishTitle.textContent =
+                    englishTitle;
+
+            }
+
+
+            /* Certificate number */
+
+            const number =
+                card
+                    .querySelector(
+                        '.certificate-number'
+                    )
+                    ?.textContent
+                    .trim();
+
+            if (number) {
+
+                certificateModalNumber.textContent =
+                    number;
+
+            }
+
+
+            /* Open */
+
+            certificateModal.classList.add(
+                'active'
+            );
+
+            certificateModal.setAttribute(
+                'aria-hidden',
+                'false'
+            );
+
+            document.body.classList.add(
+                'modal-open'
+            );
+
+        }
+    );
+
+});
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+function closeCertificateModal() {
+
+    certificateModal.classList.remove(
+        'active'
+    );
+
+    certificateModal.setAttribute(
+        'aria-hidden',
+        'true'
+    );
+
+    document.body.classList.remove(
+        'modal-open'
+    );
+
+    setTimeout(() => {
+
+        certificateModalImage.src = '';
+
+    }, 300);
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+if (modalClose) {
+
+    modalClose.addEventListener(
+        'click',
+        closeCertificateModal
+    );
+
+}
+
+
+/* =========================
+   CLOSE FOOTER BUTTON
+========================= */
+
+if (closeModalButton) {
+
+    closeModalButton.addEventListener(
+        'click',
+        closeCertificateModal
+    );
+
+}
+
+
+/* =========================
+   CLICK BACKDROP
+========================= */
+
+if (modalBackdrop) {
+
+    modalBackdrop.addEventListener(
+        'click',
+        closeCertificateModal
+    );
+
+}
+
+
+/* =========================
+   ESCAPE KEY
+========================= */
+
+document.addEventListener(
+    'keydown',
+    event => {
+
+        if (
+            event.key === 'Escape' &&
+            certificateModal.classList.contains(
+                'active'
+            )
+        ) {
+
+            closeCertificateModal();
+
+        }
+
+    }
+);
+
 
 
 const hamburger =

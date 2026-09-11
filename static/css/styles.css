@@ -66,6 +66,149 @@
             margin: auto;
         }
 
+
+
+
+/* ================================
+   Floating Action Buttons
+================================ */
+
+.floating-actions {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+html[dir="ltr"] .floating-actions {
+    right: auto;
+    left: 24px;
+}
+
+/* Button */
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 155px;
+    height: 48px;
+    padding: 0 17px;
+    border-radius: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(20, 20, 30, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Icon */
+
+.floating-btn-icon {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+
+    font-size: 13px;
+
+    transition: transform 0.25s ease;
+}
+
+/* Contact */
+
+.contact-btn {
+    border-color: rgba(124, 92, 255, 0.28);
+}
+
+.contact-btn .floating-btn-icon {
+    background: rgba(124, 92, 255, 0.15);
+    color: #a994ff;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+
+    background: rgba(124, 92, 255, 0.14);
+    border-color: rgba(124, 92, 255, 0.55);
+
+    box-shadow:
+        0 12px 35px rgba(124, 92, 255, 0.16);
+}
+
+.contact-btn:hover .floating-btn-icon {
+    transform: translateY(-1px);
+}
+
+/* Resume */
+
+.resume-btn {
+    border-color: rgba(0, 210, 160, 0.32);
+}
+
+.resume-btn .floating-btn-icon {
+    background: rgba(0, 210, 160, 0.14);
+    color: #48e0ba;
+}
+
+.resume-btn:hover {
+    transform: translateY(-3px);
+
+    background: rgba(0, 210, 160, 0.13);
+    border-color: rgba(0, 210, 160, 0.6);
+
+    box-shadow:
+        0 12px 35px rgba(0, 210, 160, 0.15);
+}
+
+.resume-btn:hover .floating-btn-icon {
+    transform: translateY(2px);
+}
+
+
+/* ================================
+   Mobile
+================================ */
+
+@media (max-width: 600px) {
+
+    .floating-actions {
+        right: 14px;
+        bottom: 14px;
+        gap: 8px;
+    }
+
+    .floating-btn {
+        min-width: 145px;
+        height: 45px;
+
+        padding: 0 13px;
+
+        border-radius: 13px;
+
+        font-size: 12px;
+    }
+
+    .floating-btn-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
         /* =========================================================
    NAVBAR
 ========================================================= */
@@ -1381,6 +1524,10 @@
 
 @media print {
 
+    .floating-actions{
+        display: none;
+    }
+
     .profile-photo {
 
         animation: none !important;
@@ -2015,165 +2162,479 @@
 }
 
 
-/* =========================
-   MODAL
-========================= */
+/* =========================================================
+   CERTIFICATE MODAL — PREMIUM SHOWCASE
+========================================================= */
 
 .certificate-modal {
-
     position: fixed;
-
     inset: 0;
+    z-index: 10000;
 
-    z-index: 9999;
-
-    display: none;
-
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 25px;
+    padding: 30px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
 }
 
 .certificate-modal.active {
-    display: flex;
-}
-
-.modal-backdrop {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        rgba(3,6,12,.82);
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
+    visibility: visible;
+    opacity: 1;
 }
 
 
 /* =========================
-   MODAL CONTENT
+   BACKDROP
+========================= */
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(124, 92, 255, .12),
+            transparent 45%
+        ),
+        rgba(3, 6, 14, .88);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =========================
+   MODAL BOX
 ========================= */
 
 .certificate-modal-content {
-
     position: relative;
-
     z-index: 2;
 
-    width: min(950px, 100%);
-
-    max-height: 92vh;
+    width: min(1050px, 94vw);
+    max-height: 94vh;
 
     display: flex;
-
     flex-direction: column;
+
+    padding: 28px;
 
     overflow: hidden;
 
-    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 28px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(20,26,40,.96),
-            rgba(9,13,22,.98)
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
         );
 
-    border:
-        1px solid rgba(255,255,255,.12);
-
     box-shadow:
-        0 40px 100px rgba(0,0,0,.60),
-        0 0 60px rgba(124,92,255,.08);
-
-    animation:
-        modalEnter .35s ease;
-}
-
-.modal-close {
-
-    position: absolute;
-
-    top: 14px;
-    left: 14px;
-
-    z-index: 5;
-
-    width: 38px;
-    height: 38px;
-
-    display: grid;
-    place-items: center;
-
-    border-radius: 50%;
-
-    border:
-        1px solid rgba(255,255,255,.12);
-
-    color: white;
-
-    background:
-        rgba(255,255,255,.06);
-
-    font-size: 23px;
-
-    cursor: pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease;
-}
-
-.modal-close:hover {
+        0 40px 100px rgba(0,0,0,.55),
+        inset 0 1px 0 rgba(255,255,255,.08);
 
     transform:
-        rotate(90deg);
+        translateY(20px)
+        scale(.96);
 
-    background:
-        rgba(255,70,100,.16);
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1);
+}
+
+.certificate-modal.active
+.certificate-modal-content {
+    transform:
+        translateY(0)
+        scale(1);
 }
 
 
 /* =========================
-   MODAL HEADER
+   CLOSE BUTTON
+========================= */
+
+.modal-close {
+    position: absolute;
+
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.06);
+
+    color: #fff;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition:
+        .25s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255,80,110,.15);
+
+    border-color:
+        rgba(255,80,110,.4);
+
+    transform:
+        rotate(90deg);
+}
+
+
+/* =========================
+   HEADER
 ========================= */
 
 .modal-header {
+    position: relative;
 
     padding:
-        24px 65px 18px 25px;
-
-    border-bottom:
-        1px solid rgba(255,255,255,.07);
+        5px
+        55px
+        20px
+        5px;
 }
 
-.modal-header span {
-
-    display: block;
-
-    margin-bottom: 5px;
-
-    color:
-        var(--primary-light);
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
+.modal-title-wrapper {
+    position: relative;
 }
 
-.modal-header h3 {
+.modal-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    color: var(--secondary);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.modal-eyebrow-line {
+    width: 28px;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+}
+
+
+.modal-number {
+    position: absolute;
+
+    top: -8px;
+    left: 0;
+
+    font-size: 70px;
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.025);
+
+    pointer-events: none;
+}
+
+
+#certificateModalTitle {
+    position: relative;
 
     margin: 0;
 
-    font-size: 17px;
+    color: var(--text);
+
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 800;
+
+    line-height: 1.5;
 }
 
+.modal-english-title {
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    font-weight: 500;
+
+    letter-spacing: .3px;
+}
+
+
+/* =========================
+   CERTIFICATE PREVIEW
+========================= */
+
+.certificate-preview {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    min-height: 300px;
+    max-height: 62vh;
+
+    border-radius: 20px;
+
+    background:
+        rgba(0,0,0,.18);
+
+    border:
+        1px solid rgba(255,255,255,.06);
+
+    overflow: hidden;
+}
+
+
+/* glow behind certificate */
+
+.certificate-image-glow {
+    position: absolute;
+
+    width: 55%;
+    height: 55%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(124,92,255,.22),
+            transparent 70%
+        );
+
+    filter: blur(45px);
+
+    pointer-events: none;
+}
+
+
+.certificate-preview img {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    max-width: 100%;
+    max-height: 58vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+    transition:
+        transform .35s ease;
+}
+
+.certificate-preview:hover img {
+    transform: scale(1.01);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.modal-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding-top: 18px;
+}
+
+
+.modal-footer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.modal-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--success);
+
+    box-shadow:
+        0 0 12px
+        rgba(39,214,155,.7);
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.modal-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+.modal-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        .25s ease;
+}
+
+
+.modal-action-btn:hover {
+    background:
+        rgba(124,92,255,.15);
+
+    border-color:
+        rgba(124,92,255,.4);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .certificate-modal {
+        padding: 12px;
+    }
+
+    .certificate-modal-content {
+        width: 100%;
+
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+    .modal-header {
+        padding:
+            5px
+            45px
+            15px
+            5px;
+    }
+
+    .modal-number {
+        font-size: 50px;
+    }
+
+    .certificate-preview {
+        padding: 7px;
+
+        max-height: 58vh;
+
+        border-radius: 15px;
+    }
+
+    .certificate-preview img {
+        max-height: 54vh;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .modal-footer-info {
+        justify-content: center;
+    }
+
+    .modal-actions {
+        width: 100%;
+    }
+
+    .modal-action-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .modal-close {
+        top: 12px;
+        right: 12px;
+    }
+}
+
+
+body.modal-open {
+    overflow: hidden;
+}
 
 /* =========================
    PREVIEW
@@ -2275,19 +2736,6 @@
 
     background:
         rgba(124,92,255,.12);
-}
-
-.print-certificate {
-
-    border-color:
-        rgba(124,92,255,.25);
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(124,92,255,.20),
-            rgba(0,212,255,.08)
-        );
 }
 
 
@@ -3473,3 +3921,8 @@ html {
 .social-link:hover i {
     transform: translateY(-3px) scale(1.12);
 }
+
+
+
+
+

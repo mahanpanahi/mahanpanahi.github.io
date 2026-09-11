@@ -125,6 +125,19 @@
 
 <body>
 
+    <div class="floating-actions">
+        <a href="static/files/mahanpanahi_resume.pdf" download="Mahan-Panahi-Resume.pdf" class="floating-btn resume-btn" target="_blank">
+            <span class="floating-btn-icon"><i class="fas fa-file-download"></i></span>
+            <span data-i18n="floating.resume">دانلود رزومه</span>
+        </a>
+
+        <a href="#contact" class="floating-btn contact-btn">
+            <span class="floating-btn-icon"><i class="fas fa-envelope"></i></span>
+            <span data-i18n="floating.contact">ارتباط با من</span>
+        </a>
+    </div>
+
+
     <!-- =========================
          NAVIGATION
     ========================== -->
@@ -760,9 +773,9 @@
                     <div class="certificate-image">
                         <img src="static/images/Python Programming(Advance)01.jpg" alt="دوره جامع زبان برنامه نویسی پایتون">
                         <div class="certificate-overlay">
-                            <button type="button" class="view-certificate" data-image="static/images/Python Programming(Advance)01.jpg" data-title="دوره جامع زبان برنامه نویسی پایتون">
-                                <span>⌕</span>
-                                مشاهده مدرک
+                            <button type="button" class="view-certificate" data-certificate="static/images/Telegram-Bot-API.jpg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="certificates.view">مشاهده مدرک</span>
                             </button>
                         </div>
                     </div>
@@ -786,9 +799,9 @@
                     <div class="certificate-image">
                         <img src="static/images/BootStrap.jpg" alt="فریم ورک بوت استرپ 4 و 5">
                         <div class="certificate-overlay">
-                            <button type="button" class="view-certificate" data-image="static/images/BootStrap.jpg" data-title="فریم ورک بوت استرپ 4 و 5">
-                                <span>⌕</span>
-                                مشاهده مدرک
+                            <button type="button" class="view-certificate" data-certificate="static/images/Telegram-Bot-API.jpg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="certificates.view">مشاهده مدرک</span>
                             </button>
                         </div>
                     </div>
@@ -813,9 +826,9 @@
                     <div class="certificate-image">
                         <img src="static/images/Flask01.jpg" alt="مدرک فریم ورک Flask">
                         <div class="certificate-overlay">
-                            <button type="button" class="view-certificate" data-image="static/images/Flask01.jpg" data-title="مدرک فریم ورک Flask">
-                                <span>⌕</span>
-                                مشاهده مدرک
+                            <button type="button" class="view-certificate" data-certificate="static/images/Telegram-Bot-API.jpg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="certificates.view">مشاهده مدرک</span>
                             </button>
                         </div>
                     </div>
@@ -838,24 +851,18 @@
                 <!-- Certificate 4 -->
                 <article class="certificate-card">
                     <div class="certificate-image coming-soon-card">
-
-    <div class="coming-soon-content">
-
-        <div class="coming-soon-icon">
-            🔒
-        </div>
-
-        <span class="coming-soon-label">
-            COMING SOON
-        </span>
-
-        <small>
-            Certificate
-        </small>
-
-    </div>
-
-</div>
+                        <div class="coming-soon-content">
+                            <div class="coming-soon-icon">
+                                🔒
+                            </div>
+                            <span class="coming-soon-label">
+                                COMING SOON
+                            </span>
+                            <small>
+                                Certificate
+                            </small>
+                        </div>
+                    </div>
                     <div class="certificate-content">
                         <div class="certificate-number">
                             04
@@ -877,9 +884,9 @@
                     <div class="certificate-image">
                         <img src="static/images/Project-Based Web Development01.jpg" alt="مدرک طراحی سایت  سمت کاربر">
                         <div class="certificate-overlay">
-                            <button type="button" class="view-certificate" data-image="certificates/flask.jpg" data-title="طراحی سایت سمت کاربر">
-                                <span>⌕</span>
-                                مشاهده مدرک
+                            <button type="button" class="view-certificate" data-certificate="static/images/Telegram-Bot-API.jpg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="certificates.view">مشاهده مدرک</span>
                             </button>
                         </div>
                     </div>
@@ -904,9 +911,9 @@
                     <div class="certificate-image">
                         <img src="static/images/Telegram-Bot-API.jpg" alt="ساخت و مدیریت ربات تلگرام">
                         <div class="certificate-overlay">
-                            <button type="button" class="view-certificate" data-image="static/images/Telegram-Bot-API.jpg" data-title="ساخت و مدیریت ربات تلگرام">
-                                <span>⌕</span>
-                                مشاهده مدرک
+                            <button type="button" class="view-certificate" data-certificate="static/images/Telegram-Bot-API.jpg">
+                                <i class="fas fa-eye"></i>
+                                <span data-i18n="certificates.view">مشاهده مدرک</span>
                             </button>
                         </div>
                     </div>
@@ -948,78 +955,52 @@
      CERTIFICATE MODAL
 ========================= -->
 
-<div
-    class="certificate-modal"
-    id="certificateModal"
-    aria-hidden="true"
->
-
+<div class="certificate-modal" id="certificateModal" aria-hidden="true">
     <div class="modal-backdrop"></div>
+    <div class="certificate-modal-content" role="dialog" aria-modal="true" aria-labelledby="certificateModalTitle">
 
-
-    <div
-        class="certificate-modal-content"
-        role="dialog"
-        aria-modal="true"
-    >
-
-        <button
-            type="button"
-            class="modal-close"
-            aria-label="بستن"
-        >
-            ×
+        <!-- Close -->
+        <button type="button" class="modal-close" aria-label="بستن">
+            <i class="fas fa-times"></i>
         </button>
 
-
+        <!-- Header -->
         <div class="modal-header">
-
-            <div>
-                <span>
-                    CERTIFICATE
-                </span>
-
-                <h3 id="certificateModalTitle">
-                    مشاهده مدرک
-                </h3>
+            <div class="modal-title-wrapper">
+                <div class="modal-eyebrow">
+                    <span class="modal-eyebrow-line"></span>
+                    <span>MY CERTIFICATE</span>
+                </div>
+                <div class="modal-number" id="certificateModalNumber">
+                    01
+                </div>
+                <h3 id="certificateModalTitle">مشاهده مدرک</h3>
+                <p id="certificateModalEnglishTitle" class="modal-english-title">Certificate
+                </p>
             </div>
-
         </div>
 
-
+        <!-- Certificate Image -->
         <div class="certificate-preview">
-
-            <img
-                id="certificateModalImage"
-                src=""
-                alt="Certificate Preview"
-            >
-
+            <div class="certificate-image-glow"></div>
+            <img id="certificateModalImage" src="" alt="Certificate Preview">
         </div>
 
-
-        <div class="modal-actions">
-
-            <button
-                type="button"
-                class="modal-action-btn print-certificate"
-            >
-                🖨️ چاپ مدرک
-            </button>
-
-            <button
-                type="button"
-                class="modal-action-btn close-modal-btn"
-            >
-                بستن
-            </button>
-
+        <!-- Bottom info -->
+        <div class="modal-footer">
+            <div class="modal-footer-info">
+                <span class="modal-status-dot"></span>
+                <span>Verified Certificate</span>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="modal-action-btn close-modal-btn">
+                    <i class="fas fa-times"></i>
+                    بستن
+                </button>
+            </div>
         </div>
-
     </div>
-
 </div>
-
 
         <!-- =========================
              ADDITIONAL SKILLS

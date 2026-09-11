@@ -2,6 +2,11 @@ const translations = {
 
     fa: {
 
+        floating: {
+            contact: "ارتباط با من",
+            resume: "دانلود رزرومه",
+        },
+
         nav: {
             skills: "مهارت‌ها",
             projects: "پروژه‌ها",
@@ -48,12 +53,12 @@ const translations = {
         project1: {
             title: "وب‌سایت آرشیو مدل‌های سه‌بعدی",
             description:"طراحی و توسعه یک وب‌سایت اختصاصی برای آرشیو، نمایش و مدیریت مجموعه مدل‌ها و Assetهای سه‌بعدی با رابط کاربری مدرن و Responsive.",
-            btn: "مشاهده ریپازیتوری",
+            btn: "مشاهده وب سایت",
         },
         project2: {
             title: "وب‌سایت جاویدنامان ایران",
             description: " طراحی و توسعه یک وب‌سایت معرفی و آرشیو با رابط کاربری مدرن، ساختار Responsive و تمرکز بر ارائه و نمایش محتوای پروژه.",
-            btn: "مشاهده ریپازیتوری",
+            btn: "مشاهده وب سایت",
         },
         project3: {
             title: "سیستم رزرو بلیط هواپیما",
@@ -132,6 +137,11 @@ const translations = {
 
     en: {
 
+        floating: {
+            contact: "Contact Me",
+            resume: "Download Resume",
+        },
+
         nav: {
             skills: "Skills",
             projects: "Projects",
@@ -178,12 +188,12 @@ const translations = {
         project1: {
             title: "3D Models Archive Website",
             description: "Designed and developed a dedicated website for archiving, showcasing, and managing a collection of 3D models and assets with a modern, responsive user interface.",
-            btn: "View Repository",
+            btn: "View Website",
         },
         project2: {
             title: "JavidNamha Iran Website",
             description: "Designed and developed a modern, responsive website for introducing and archiving project content, with a focus on presenting and showcasing digital materials.",
-            btn: "View Repository",
+            btn: "View Website",
         },
         project3: {
             title: "Airline Ticket Reservation System",
@@ -260,6 +270,11 @@ const translations = {
 
     ar: {
 
+        floating: {
+            contact: "تواصل معي",
+            resume: "تحميل السيرة الذاتية",
+        },
+
         nav: {
             skills: "المهارات",
             projects: "المشاريع",
@@ -306,12 +321,12 @@ const translations = {
         project1: {
             title: "موقع أرشيف النماذج ثلاثية الأبعاد",
             description: "تصميم وتطوير موقع إلكتروني مخصص لأرشفة وعرض وإدارة مجموعة من النماذج والأصول ثلاثية الأبعاد، مع واجهة مستخدم عصرية ومتجاوبة.",
-            btn: "عرض المستودع",
+            btn: "عرض الموقع",
         },
         project2: {
             title: "موقع جاويدناما إيران",
             description: "تصميم وتطوير موقع إلكتروني عصري ومتجاوب للتعريف بمحتوى المشاريع وأرشفته، مع التركيز على تقديم وعرض المحتوى الرقمي.",
-            btn: "عرض المستودع",
+            btn: "عرض الموقع",
         },
         project3: {
             title: "نظام حجز تذاكر الطيران",
