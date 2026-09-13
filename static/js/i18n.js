@@ -119,6 +119,10 @@ const translations = {
             title: "مهارت های تکمیلی"
         },
 
+        certificate: {
+            view: "مشاهده مدرک",
+        },
+
         contact: {
             label: "CONTACT",
             title: "تماس با من",
@@ -253,6 +257,10 @@ const translations = {
             title: "Additional Skills"
         },
 
+        certificate: {
+            view: "View Certificate",
+        },
+
         contact: {
             label: "CONTACT",
             title: "Contact Me",
@@ -384,6 +392,10 @@ const translations = {
         section: {
             label: "ADDITIONAL",
             title: "المهارات الإضافية"
+        },
+
+        certificate: {
+            view: "عرض الشهادة",
         },
 
         contact: {
