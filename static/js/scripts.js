@@ -724,3 +724,181 @@ document
     }
 
 });
+
+
+/* =====================================
+   HERO TYPEWRITER
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const firstName = document.getElementById("heroFirstName");
+    const lastName = document.getElementById("heroLastName");
+    const jobTitle = document.getElementById("heroJobTitle");
+
+    if (!firstName || !lastName || !jobTitle) return;
+
+    const originalJobTitle = jobTitle.textContent.trim();
+
+    const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    let animationTimeouts = [];
+
+    function clearTypingTimers() {
+        animationTimeouts.forEach(clearTimeout);
+        animationTimeouts = [];
+    }
+
+    function typeText(element, text, speed, callback) {
+
+        element.textContent = "";
+
+        const cursor = document.createElement("span");
+        cursor.className = "typing-cursor";
+        cursor.setAttribute("aria-hidden", "true");
+
+        element.appendChild(cursor);
+
+        let index = 0;
+
+        function typeCharacter() {
+
+            if (index < text.length) {
+
+                cursor.before(
+                    document.createTextNode(text[index])
+                );
+
+                index++;
+
+                const timeout = setTimeout(
+                    typeCharacter,
+                    speed
+                );
+
+                animationTimeouts.push(timeout);
+
+            } else {
+
+                if (callback) callback();
+
+            }
+
+        }
+
+        typeCharacter();
+    }
+
+    function startHeroTyping() {
+
+        clearTypingTimers();
+
+        const firstText = firstName.textContent.trim();
+        const lastText = lastName.textContent.trim();
+
+        if (prefersReducedMotion) {
+            firstName.textContent = firstText;
+            lastName.textContent = lastText;
+            jobTitle.textContent = originalJobTitle;
+            return;
+        }
+
+        firstName.textContent = "";
+        lastName.textContent = "";
+        jobTitle.textContent = "";
+
+        const fullName = firstText + " " + lastText;
+
+        let index = 0;
+
+        const nameCursor = document.createElement("span");
+
+        nameCursor.className = "typing-cursor";
+        nameCursor.setAttribute("aria-hidden", "true");
+
+        firstName.appendChild(nameCursor);
+
+        function typeName() {
+
+            if (index < firstText.length) {
+
+                nameCursor.before(
+                    document.createTextNode(firstText[index])
+                );
+
+                index++;
+
+                animationTimeouts.push(
+                    setTimeout(typeName, 120)
+                );
+
+            } else {
+
+                firstName.textContent = firstText;
+
+                typeLastName();
+
+            }
+
+        }
+
+        function typeLastName() {
+
+            const lastCursor = document.createElement("span");
+
+            lastCursor.className = "typing-cursor";
+            lastCursor.setAttribute("aria-hidden", "true");
+
+            lastName.textContent = "";
+            lastName.appendChild(lastCursor);
+
+            let lastIndex = 0;
+
+            function typeNext() {
+
+                if (lastIndex < lastText.length) {
+
+                    lastCursor.before(
+                        document.createTextNode(lastText[lastIndex])
+                    );
+
+                    lastIndex++;
+
+                    animationTimeouts.push(
+                        setTimeout(typeNext, 120)
+                    );
+
+                } else {
+
+                    lastName.textContent = lastText;
+
+                    animationTimeouts.push(
+                        setTimeout(() => {
+
+                            typeText(
+                                jobTitle,
+                                originalJobTitle,
+                                65
+                            );
+
+                        }, 350)
+                    );
+
+                }
+
+            }
+
+            typeNext();
+
+        }
+
+        typeName();
+    }
+
+    window.startHeroTyping = startHeroTyping;
+
+    startHeroTyping();
+
+});

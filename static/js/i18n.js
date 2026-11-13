@@ -95,8 +95,8 @@ const translations = {
         },
 
         certificates: {
-            label: "CERTIFICATIONS",
-            title: "مدارک و دوره‌های تخصصی",
+            label: "SKILLS",
+            title: "مهارت ها و دوره‌های تخصصی",
             description: "دوره‌های تخصصی گذرانده‌شده در حوزه Python و فناوری",
 
             label_slider: "CERTIFICATES",
@@ -233,8 +233,8 @@ const translations = {
         },
 
         certificates: {
-            label: "CERTIFICATIONS",
-            title: "Certifications & Specialized Courses",
+            label: "SKILLS",
+            title: "Skills & Specialized Courses",
             description: "Specialized courses completed in Python and technology",
 
             label_slider: "CERTIFICATES",
@@ -370,8 +370,8 @@ const translations = {
         },
 
         certificates: {
-            label: "CERTIFICATIONS",
-            title: "الشهادات والدورات المتخصصة",
+            label: "SKILLS",
+            title: "المهارات والدورات المتخصصة",
             description: "دورات متخصصة مكتملة في مجال Python والتقنيات",
 
             label_slider: "CERTIFICATES",

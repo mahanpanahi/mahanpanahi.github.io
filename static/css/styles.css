@@ -43,19 +43,21 @@
     font-display: swap;
 }
 :root {
-    --bg: #070b14;
-    --bg-soft: #0d1320;
-    --card: rgba(255, 255, 255, 0.055);
-    --card-hover: rgba(255, 255, 255, 0.085);
-    --border: rgba(255, 255, 255, 0.09);
-    --text: #f4f7fb;
-    --muted: #9aa7b8;
-    --primary: #7c5cff;
-    --primary-light: #9d88ff;
-    --secondary: #00d4ff;
-    --success: #27d69b;
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-    --radius: 22px;
+    --bg: #111113;
+    --bg-soft: #1B1A1B;
+    --card: rgba(255, 248, 242, 0.035);
+    --card-hover: rgba(255, 248, 242, 0.065);
+    --border: rgba(220, 200, 185, 0.12);
+    --text: #F2EEE8;
+    --muted: #A7A19A;
+    --primary: #B65B48;
+    --primary-light: #D27B62;
+    --icon-primary: #5BCDBE;
+    --icon-secondary: #E0BD83;
+    --secondary: #B49A73;
+    --success: #91A58B;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
+    --radius: 18px;
 }
 
 * {
@@ -86,6 +88,7 @@ body {
     line-height: 1.8;
     min-height: 100vh;
     overflow-x: hidden;
+    isolation: isolate;
 }
 
 body::before {
@@ -98,7 +101,7 @@ body::before {
         linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
     background-size: 45px 45px;
     mask-image: linear-gradient(to bottom, black, transparent 80%);
-    z-index: -1;
+    z-index: -2;
 }
 
 a {
@@ -237,7 +240,7 @@ html[dir="ltr"] .floating-actions {
     align-items: center;
     padding: 10px 18px;
     box-sizing: border-box;
-    background: rgba(7, 11, 20, 0.72);
+    background: rgba(7, 20, 14, 0.5);
     border: 1px solid var(--border);
     border-radius: 18px;
     backdrop-filter: blur(18px);
@@ -511,6 +514,46 @@ html[dir="ltr"] .floating-actions {
     color: var(--muted);
     margin-bottom: 22px;
     animation: fadeUp 0.8s 0.2s ease both;
+}
+
+/* =====================================
+   HERO TYPEWRITER ANIMATION
+===================================== */
+
+.hero-name, .hero-job-title {
+    width: fit-content;
+    max-width: 100%;
+    animation: heroFloat 4s ease-in-out infinite;
+}
+.hero-name {
+    min-height: 1.15em;
+}
+.hero-job-title {
+    min-height: 1.6em;
+    animation-delay: 0.4s;
+}
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    margin-inline-start: 5px;
+    vertical-align: middle;
+    background: var(--secondary);
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--secondary);
+    animation: cursorBlink 0.8s steps(2, start) infinite;
+}
+@keyframes cursorBlink {
+    to {
+        visibility: hidden;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-name,
+    .hero-job-title,
+    .typing-cursor {
+        animation: none !important;
+    }
 }
 
 .hero-description {
@@ -1732,6 +1775,12 @@ body.modal-open {
     background: rgba(124, 92, 255, 0.1);
     border: 1px solid rgba(124, 92, 255, 0.18);
 }
+.project:nth-child(even) .project-icon i{
+    color: var(--icon-primary);
+}
+.project:nth-child(odd) .project-icon i{
+    color: var(--icon-secondary);
+}
 
 .project h4 {
     font-size: 18px;
@@ -1902,17 +1951,6 @@ body.modal-open {
 .certificate:hover {
     transform: translateY(-3px);
     background: var(--card-hover);
-}
-
-.cert-icon {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
-    display: grid;
-    place-items: center;
-    border-radius: 11px;
-    background: rgba(124, 92, 255, 0.1);
-    color: var(--primary-light);
 }
 
 .certificate span {
@@ -2255,7 +2293,7 @@ footer {
 
 html {
     scrollbar-width: thin;
-    scrollbar-color: #7c5cff #070b14;
+    scrollbar-color: var(--primary);
 }
 
 /* =========================
@@ -2939,4 +2977,17 @@ html {
     .contact-cta {
         display: none;
     }
+}
+
+/* =================================
+   WATER RIPPLE EFFECT
+================================= */
+.water-ripple-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.85;
 }
