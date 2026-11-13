@@ -4,7 +4,7 @@ const translations = {
 
         floating: {
             contact: "ارتباط با من",
-            resume: "دانلود رزرومه",
+            resume: "دانلود رزومه",
         },
 
         nav: {
